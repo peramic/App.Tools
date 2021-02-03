@@ -1,0 +1,17 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:w="urn:import:havis.custom.harting.tools.ui.client.widgets">
+
+	<ui:with type="havis.custom.harting.tools.ui.resourcebundle.ConstantsResource" field="i18n" />
+	<ui:with type="havis.custom.harting.tools.ui.resourcebundle.ResourceBundle" field="res" />
+
+	<g:HTMLPanel styleName="{res.css.row}">
+		<div class="{res.css.firstLabel}">
+			<ui:text from="{i18n.schemeTypeLabel}" />
+		</div>
+		<div class="{res.css.flexcol}">
+			<w:CustomListBox ui:field="schemeTypeListBox" styleName="{res.css.webuiListBox}" />
+		</div>
+	</g:HTMLPanel>
+</ui:UiBinder> 

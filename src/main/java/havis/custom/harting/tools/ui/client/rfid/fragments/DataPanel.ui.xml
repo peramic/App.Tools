@@ -1,0 +1,40 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:w="urn:import:havis.custom.harting.tools.ui.client.widgets">
+	
+	<ui:with type="havis.custom.harting.tools.ui.resourcebundle.ConstantsResource" field="i18n" />
+	<ui:with type="havis.custom.harting.tools.ui.resourcebundle.ResourceBundle" field="res" />
+	<ui:style>
+		.extendedRow {
+			align-items: flex-start !important;
+		}
+
+		.extendedWideLabel {
+			display: flex;
+			margin-top: 0.3em;
+		}
+		
+		.xRight {
+			margin-left: auto;
+			align-items: flex-start;
+		}
+		
+		.xPadding {
+			padding-left: 0.1em;
+			padding-right: 0.1em;
+		}
+	</ui:style>
+	<g:HTMLPanel styleName="{style.extendedRow} {res.css.row}">
+		<div class="{res.css.wideLabel} {style.extendedWideLabel}" >
+	      	<ui:text from="{i18n.dataLabel}"/>
+	    </div>
+	    <div class="{res.css.flexcol}" style="display: flex; align-items: baseline;">
+	      	<div class="{style.xRight}">
+	      		<g:Label ui:field="xLabel" styleName="{style.xPadding}">x</g:Label>
+	      	</div>
+			<g:TextArea ui:field="dataTextBox" styleName="{res.css.webuiTextArea}"/>
+			<w:CustomListBox ui:field="privilegeList" styleName="{res.css.webuiListBox}"/>
+		</div>
+	</g:HTMLPanel>
+</ui:UiBinder> 

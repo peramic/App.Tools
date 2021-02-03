@@ -1,0 +1,16 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+
+	<ui:with type="havis.custom.harting.tools.ui.resourcebundle.ConstantsResource" field="i18n" />
+	<ui:with type="havis.custom.harting.tools.ui.resourcebundle.ResourceBundle" field="res" />
+
+	<g:HTMLPanel>
+		<div class="{res.css.epcSec}">
+			<div>
+				<g:Label text="{i18n.epcColLabel}" ui:field="epcStringLabel" styleName="{res.css.epcLabel}" />
+			</div>
+			<g:TextBox ui:field="epcStringTextBox" styleName="{res.css.webuiTextBox}" enabled="true"></g:TextBox>
+		</div>
+	</g:HTMLPanel>
+</ui:UiBinder> 

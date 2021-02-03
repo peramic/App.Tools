@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="havis.custom.harting.tools" default="publish" xmlns:ivy="antlib:org.apache.ivy.ant">
+
+	<property file="${basedir}/build.properties" />
+
+	<import>
+		<url url="${ivy.url}/ant/default.xml" />
+	</import>
+	
+	<firstmatchmapper id="mapper">
+		<globmapper from="${build.dir}/*.jar" to="${dst.dir}/bundle/50_*.jar" />
+	</firstmatchmapper>
+
+	<target name="clean-cache" description="Cleans the ivy cache">
+		<clean-cache />
+	</target>
+
+	<target name="clean-all" description="Cleans the project and ivy cache">
+		<clean-all />
+	</target>
+
+	<target name="jar" description="Creates the binary JAR">
+		<compile dst="${build.dir.classes}">
+			<src path="${src.main.dir}" />
+		</compile>
+		<compile-gwt />
+		<jar-bin />
+	</target>
+
+	<target name="app" depends="jar">
+		<app name="havis.tools">
+			<ivy:retrieve pattern="${build.dir}/tar/[artifact].[ext]" conf="runtime" log="quiet" />
+		</app>
+	</target>
+
+	<target name="publish" depends="app" description="Publishes the JAR to the repository">
+		<publish jar="false" app="false" />
+	</target>
+
+	<target name="standalone" depends="jar">
+		<standalone mapper="mapper" >
+			<extract name="havis.device.test.hardware.io.app" />
+			<extract name="havis.device.test.hardware.rf.app" />
+		</standalone>
+	</target>
+
+</project>

@@ -1,0 +1,28 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	
+	<ui:with type="havis.custom.harting.tools.ui.resourcebundle.ConstantsResource" field="i18n" />
+	<ui:with type="havis.custom.harting.tools.ui.resourcebundle.ResourceBundle" field="res" />
+	
+	<ui:style>
+	
+	</ui:style>
+	<g:HTMLPanel ui:field="settingsPanel" styleName="{res.css.advancedSubPanel}">
+		<div>
+			<div class="{res.css.row}" id="lockPwPanel">
+			    <div class="{res.css.settingsLabel}">
+			      	<ui:text from="{i18n.lockPassword}"/>
+			    </div>
+			    <div class="{res.css.flexcol} {res.css.row}">
+			    	<div>
+						<g:ToggleButton ui:field="pwdToggleButton" styleName="webui-Switcher {res.css.pwdToggle}" enabled="true" down="false"/>
+					</div>
+			        <div class="{res.css.flexcol} {res.css.switchTb}">
+						<g:TextBox ui:field="lockTextBox" styleName="{res.css.webuiTextBox}" visible="{pwdToggleButton.getValue}"/>
+					</div>
+			    </div>
+			</div>
+		</div>
+	</g:HTMLPanel>
+</ui:UiBinder> 

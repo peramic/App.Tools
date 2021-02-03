@@ -1,0 +1,8 @@
+/target
+/build.properties
+/lib
+/.metadata
+/.settings
+/coverage-report
+/gwt-unitCache/
+/war/

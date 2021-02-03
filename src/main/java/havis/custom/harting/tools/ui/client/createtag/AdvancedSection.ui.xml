@@ -1,0 +1,56 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:s="urn:import:havis.net.ui.shared.client"
+	xmlns:w="urn:import:havis.custom.harting.tools.ui.client.widgets"
+	xmlns:f="urn:import:havis.custom.harting.tools.ui.client.createtag.fragments">
+	
+	<ui:with type="havis.custom.harting.tools.ui.resourcebundle.ConstantsResource" field="i18n" />
+	<ui:with type="havis.custom.harting.tools.ui.resourcebundle.ResourceBundle" field="res" />
+	
+	<ui:import field="havis.custom.harting.tools.model.Scheme.*"/>
+	
+	<ui:style>
+		.fileButton {
+			cursor: pointer;
+			width: 6em;
+			border: 0;
+	    	height: 1.8em;
+	    	font-size: 1em;
+	    	text-indent: 1em;
+		}
+		.buttons {
+			margin: 0.1em 0 1em;
+			display: inline-flex;
+			display: -ms-inline-flex;
+			line-height: 1.8em;
+			border: 1px solid lightgrey;
+			border-radius: 5px;
+			background: linear-gradient(#fff, #f2f2f2);
+			box-shadow: 0 2px 5px #d2d2d2;
+			text-align: right;
+		}
+	</ui:style>
+	<g:HTMLPanel styleName="{res.css.advancedSubPanel}" ui:field="etbSeriesPanel">
+		<g:HTMLPanel>	
+			<div>
+				<f:SchemePanel ui:field="schemePanel"/>
+				
+				<f:LengthPanel ui:field="lengthPanel"/>
+				
+				<f:ValuePanel ui:field="valuePanel"/>
+				
+				<f:CompanyPrefixPanel ui:field="companyPrefixPanel"/>
+				
+				<f:ReferencePanel ui:field="referencePanel"/>
+				
+				<f:SerialNumberPanel ui:field="serialNumberPanel"/>
+				
+				<g:FlowPanel styleName="{style.buttons}">
+					<g:Button ui:field="exportButton" text="Export" addStyleNames="{style.fileButton} {res.css.exportButton}" />
+				</g:FlowPanel>
+			</div>
+			
+		</g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder> 

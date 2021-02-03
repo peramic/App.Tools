@@ -1,0 +1,28 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder
+	xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:c="urn:import:havis.custom.harting.tools.ui.client">
+	<ui:style>
+	.core-ui {
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+	}
+	
+	.configurations {
+		font-size: 1.5em;
+		overflow: auto;
+		-webkit-flex: 1;
+		-ms-flex: 1;
+		flex: 1;
+	}
+
+	</ui:style>
+	<g:FlowPanel ui:field="container" addStyleNames="{style.core-ui}" visible="true">
+		<c:ToolsPanel ui:field="toolsPanel" addStyleNames="{style.configurations}"/>
+	</g:FlowPanel>
+</ui:UiBinder>

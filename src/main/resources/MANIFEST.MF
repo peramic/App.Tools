@@ -1,0 +1,31 @@
+Bundle-Name: Ha-VIS Tools
+Bundle-SymbolicName: havis.custom.harting.tools
+Bundle-Version: 2.6.0
+Application-Name: Tools
+Implementation-Version: 2.6
+Bundle-ManifestVersion: 2
+Bundle-Vendor: HARTING IT_SD
+Havis-Bundle: /OSGI-INF/havis.custom.harting.tools.properties
+Bundle-Activator: havis.custom.harting.tools.osgi.Activator
+Import-Package: 
+ com.fasterxml.jackson.annotation,
+ com.fasterxml.jackson.core,
+ com.fasterxml.jackson.databind,
+ havis.device.rf.tag,
+ havis.middleware.misc,
+ havis.middleware.tdt,
+ havis.net.rest.shared,
+ havis.net.rest.shared.data,
+ javax.ws.rs,
+ javax.ws.rs.core,
+ javax.ws.rs.ext,
+ javax.xml.bind.annotation,
+ org.osgi;resolution:=optional,
+ org.osgi.framework;resolution:=optional,
+ org.supercsv.cellprocessor,
+ org.supercsv.cellprocessor.constraint,
+ org.supercsv.cellprocessor.ift,
+ org.supercsv.io,
+ org.supercsv.prefs,
+ org.supercsv.util
+

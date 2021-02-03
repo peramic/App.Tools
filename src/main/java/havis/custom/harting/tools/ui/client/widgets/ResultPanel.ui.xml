@@ -1,0 +1,15 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	
+	<ui:with type="havis.custom.harting.tools.ui.resourcebundle.ConstantsResource" field="i18n" />
+	<ui:with type="havis.custom.harting.tools.ui.resourcebundle.ResourceBundle" field="res" />
+	
+	<ui:style>
+
+	</ui:style>
+	<g:HTMLPanel styleName="{res.css.row}">
+		<div class="{res.css.wideLabel}"><ui:text from="{i18n.resultLabel}"/></div>
+		<div class="{res.css.flexcol}"><g:TextBox ui:field="resultTextBox" enabled="false" styleName="{res.css.webuiTextBox}"/></div>
+	</g:HTMLPanel>
+</ui:UiBinder> 

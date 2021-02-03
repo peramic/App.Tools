@@ -1,0 +1,40 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder
+xmlns:ui="urn:ui:com.google.gwt.uibinder"
+xmlns:g="urn:import:com.google.gwt.user.client.ui" 
+xmlns:w="urn:import:havis.custom.harting.tools.ui.client.widgets"
+xmlns:s="urn:import:havis.net.ui.shared.client"
+xmlns:c="urn:import:havis.custom.harting.tools.ui.client.createtag"
+xmlns:f="urn:import:havis.custom.harting.tools.ui.client.createtag.fragments">
+
+	<ui:with type="havis.custom.harting.tools.ui.resourcebundle.ConstantsResource" field="i18n" />
+	<ui:with type="havis.custom.harting.tools.ui.resourcebundle.ResourceBundle" field="res" />
+	
+	<ui:style>
+	</ui:style>
+	
+	<g:HTMLPanel>
+		<g:HTMLPanel styleName="{res.css.effectOff}" ui:field="effect" />
+	
+		<div>
+	
+			<f:EpcPanel ui:field="epcPanel" styleName="{res.css.indented}"/>		
+			
+			<s:ConfigurationSections>
+				<c:AdvancedSection ui:field="advancedSection" name="Advanced" styleName="{res.css.subSection} {res.css.marginIndented}"></c:AdvancedSection>
+				<c:SettingsSection ui:field="settingsSection" name="Settings" styleName="{res.css.subSection} {res.css.marginIndented}"></c:SettingsSection>
+			</s:ConfigurationSections>
+			
+			<g:FlowPanel styleName="{res.css.indented}">
+				<w:ResultPanel ui:field="resultPanel"/>
+			</g:FlowPanel>
+			
+			<g:FlowPanel styleName="{res.css.toolbar} {res.css.indented}">
+				<g:FlowPanel>
+					<g:Button ui:field="readButton" text="{i18n.readOPLabel}" styleName="createTag-active-button"/>
+					<g:Button ui:field="writeButton" text="{i18n.writeOPLabel}" styleName="createTag-active-button"/>
+				</g:FlowPanel>
+			</g:FlowPanel>
+		</div>
+	</g:HTMLPanel>
+</ui:UiBinder> 

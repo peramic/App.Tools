@@ -1,0 +1,40 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:t="urn:import:havis.custom.harting.tools.ui.client.rfid.fragments"
+	xmlns:w="urn:import:havis.custom.harting.tools.ui.client.widgets"
+	xmlns:l="urn:import:havis.net.ui.shared.client.list">
+	<ui:with type="havis.custom.harting.tools.ui.resourcebundle.ResourceBundle" field="res" />
+	<ui:with type="havis.custom.harting.tools.ui.resourcebundle.ConstantsResource" field="i18n" />
+
+	<g:HTMLPanel ui:field="stackContent" styleName="{res.css.indented} {res.css.rfidpanel}">
+		<g:HTMLPanel styleName="{res.css.effectOff}" ui:field="effect" />
+	
+		<div class="{res.css.headline}">
+	      	<ui:text from="{i18n.executeLabel}"/>
+	    </div>
+		
+		<t:OperationPanel ui:field="operationPanel" />
+		
+		<t:FieldPanel ui:field="fieldPanel" />
+		
+		<t:PasswordPanel ui:field="passwordPanel"/>
+		
+		<t:DataPanel ui:field="dataPanel" />
+		
+		<w:ResultPanel ui:field="resultPanel" />
+	
+		<div class="{res.css.headline}">
+	      	<ui:text from="{i18n.inventoryLabel}"/>
+	    </div>
+	    
+		<l:WidgetList ui:field="tagsList" sortable="true" selectedStyle="{res.css.listSelected}"/>
+		
+		<g:FlowPanel styleName="{res.css.toolbar}">
+			<g:FlowPanel styleName="buttons">
+				<g:Button ui:field="inventoryButton" text="{i18n.inventoryLabel}"/>
+				<g:Button ui:field="executeButton" text="{i18n.executeLabel}"/>
+			</g:FlowPanel>
+		</g:FlowPanel>
+	</g:HTMLPanel>
+</ui:UiBinder> 

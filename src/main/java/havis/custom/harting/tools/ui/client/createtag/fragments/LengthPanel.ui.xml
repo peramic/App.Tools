@@ -1,0 +1,21 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+
+	<ui:with type="havis.custom.harting.tools.ui.resourcebundle.ConstantsResource" field="i18n" />
+	<ui:with type="havis.custom.harting.tools.ui.resourcebundle.ResourceBundle" field="res" />
+
+	<g:HTMLPanel styleName="{res.css.row}">
+		<div class="{res.css.firstLabel}">
+			<ui:text from="{i18n.lengthLabel}" />
+		</div>
+		<div class="{res.css.flexcol}">
+			<g:ListBox ui:field="lengthListBox" styleName="{res.css.webuiListBox}">
+				<g:item value="96">
+					<ui:text from="{i18n.length96Label}" />
+				</g:item>
+				<g:item value=""></g:item>
+			</g:ListBox>
+		</div>
+	</g:HTMLPanel>
+</ui:UiBinder> 

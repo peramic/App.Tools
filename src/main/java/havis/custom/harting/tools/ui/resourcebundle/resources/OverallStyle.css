@@ -1,0 +1,305 @@
+@CHARSET "ISO-8859-1";
+
+@url DROP_DOWN_ARROW dropDownArrow;
+@url DROP_DOWN_ARROW_DISABLED dropDownArrowDisabled;
+@url SWITCH_ON contentSwitchOn;
+@url SWITCH_OFF contentSwitchOff;
+@url POWER_SCALE_MINUS powerScaleMinus;
+@url POWER_SCALE_PLUS powerScalePlus;
+@url WAIT inProgress;
+@url TAGS_EXPORT tagsExport;
+
+@def CONTENT_MARGIN 2.3em;
+@eval GREY_BORDER havis.custom.harting.tools.ui.resourcebundle.CSSUtils.getGreyBorder();
+
+*, html {
+	font-family: Arial;	
+	margin: 0;
+	padding: 0;
+}
+
+/****************************************************************/
+
+.webui-TextBox,
+.webui-ListBox,
+.webui-TextArea {
+	box-sizing: border-box;
+	font-size: 21px;
+	border: 1px solid #cccccc;
+	border-radius: 2.5em;
+	width: 100%;
+	height: 35px;
+	outline: none;
+}
+
+.webui-TextBox:disabled {
+	color: gray;
+}
+
+.webui-TextBox,
+.webui-TextArea {
+	padding: 0.25em 0.5em;
+	box-shadow: inset 5px 7px 9px 0px rgba(204,204,204,.41);
+	background-color: transparent;
+}
+
+.webui-TextArea {
+	border-radius: 1.0em;
+	resize: vertical;
+	overflow: hidden;
+}
+
+.webui-ListBox {
+	padding: 0.3em 0.25em 0.25em 0.45em;
+	padding-right: 45px;
+	box-shadow: inset 5px 7px 9px 0px rgba(204,204,204,.41);
+	cursor: pointer;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+    text-overflow: ''; /* removing the arrow */
+	background: DROP_DOWN_ARROW no-repeat right;
+	background-color: transparent;
+	outline: none;
+}
+
+.webui-ListBox:disabled {
+	background: DROP_DOWN_ARROW_DISABLED no-repeat right;
+}
+
+.webui-ListBox::-ms-expand {
+	display: none;
+}
+
+.row {
+	display: flex;
+	display: -ms-flexbox;
+	flex-direction: row;
+	-ms-flex-direction: row;
+	align-items: center;
+	-ms-flex-align: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.row > .row {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.col {
+	display: flex;
+	display: -ms-flexbox;
+	flex-direction: column;
+	-ms-flex-direction: column;
+}
+
+.firstLabel {
+	width: 130px;
+	font-size: 0.9em; 
+}
+
+.wideLabel {
+	width: 170px;
+	font-size: 0.9em;
+}
+
+.secLabel {
+	width: 250px;
+}
+
+.secLabel, .settingsLabel {
+	font-size: 0.9em;
+}
+
+.epcLabel {
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.settingsLabel {
+	width: 200px;
+}
+
+.headline {
+	font-size: 1.1em;
+	font-weight: bold;
+	border-top: GREY_BORDER;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 2.1em !important;
+	margin-bottom: 15px;
+}
+
+.epcSec {
+	padding-bottom: 20px;
+	border-bottom: GREY_BORDER;
+}
+
+.flexcol {
+	flex: 1;
+}
+
+.subSection {
+	border-bottom: GREY_BORDER;
+}
+
+.subSection > div:first-child > div {
+	padding-left: 2.5em;
+	font-size: 1em;
+	line-height: 2.7em;
+}
+
+.advancedSubPanel {
+	margin-left: 2.5em;
+}
+
+.pwdToggle {
+	height: 35px;
+}
+
+.botborder {
+	border-bottom: GREY_BORDER;
+}
+
+.toolbar {
+	border-top: GREY_BORDER;
+	padding-top: 20px;
+}
+
+.toolbar button {
+	width: 280px;
+	height: 31px;
+	margin: auto 1.5em;
+	margin-bottom: 20px;
+	box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.25);
+	background: #FFDC51;
+	background: linear-gradient(to bottom, #FFDC51, #FFCC02);
+	background: -webkit-linear-gradient(to bottom, #FFDC51, #FFCC02);
+	border: 1px transparent solid;
+	cursor: pointer;
+	border-radius: 1.25em;
+	font-weight: bold;
+	font-size: 0.9em;
+	color: black;
+}
+
+.toolbar > div > button:first-child {
+	margin-left: 0;
+}
+
+.toolbar > div {
+	display: flex;
+	justify-content: center;
+}
+
+.rfidpanel .toolbar {
+	margin-top: 20px;
+}
+
+.plusButton, .minusButton {
+	width: 38px;
+	height: 34px;
+	border: none;
+}
+
+.plusButton {
+	background: POWER_SCALE_PLUS no-repeat right;
+	width: 38px;
+}
+
+.minusButton {
+	background: POWER_SCALE_MINUS no-repeat right;
+	width: 37px;
+}
+
+.plusMinusBox {
+	display: flex;
+	display: -ms-flexbox;
+	flex-direction: row;
+	-ms-flex-direction: row;
+	align-items: center;
+	-ms-flex-align: center;
+	padding: 0;
+	height: 34px !important;
+}
+
+.plusMinusBox input[type="text"] {
+	border: none;
+	box-shadow: none;
+}
+
+.customPanel {
+	width: 100%;
+}
+
+.customCol {
+	align-items: flex-start;
+	ms-flex-align: start;
+}
+
+.switchTb {
+	margin-left: 20px;
+}
+
+.indented > div{
+	padding-left: 2.3em;
+}
+
+.marginIndented {
+	margin-left: 2.3em;
+}
+
+.crTagSection > div > div:first-child {
+	border-bottom: GREY_BORDER;
+}
+
+table td {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+table tr > td:first-child {
+	padding-left: 10px;
+}
+
+.text-error {
+	border: 1px #ff0000 solid;
+	box-shadow: inset 1px 2px 5px 1px rgba(255, 0, 0, 0.3);
+}
+	
+.text-success {
+	border: 1px #00ff00 solid;
+	box-shadow: inset 1px 2px 5px 1px rgba(0, 255, 0, 0.3);
+}
+
+.listSelected {
+	background-color: rgb(255, 140, 0) !important;
+}
+
+.effect-off {
+	display: none;
+}
+
+.effect-on {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 95.5%;
+	z-index: 1;
+	display: block;
+	background: rgba(210, 210, 210, 0.1);
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+.rfidpanel table tr > td:nth-child\(2\), .rfidpanel table tr > td:last-child {
+	width: 230px;
+}
+
+.exportButton {
+  	background: TAGS_EXPORT no-repeat 0.3em center;
+}
